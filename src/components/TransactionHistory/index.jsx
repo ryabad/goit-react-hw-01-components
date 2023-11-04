@@ -1,4 +1,3 @@
-import data from './transactions.json';
 import css from './index.module.css';
 import Transaction from './Transaction';
 
