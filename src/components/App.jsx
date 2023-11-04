@@ -1,16 +1,15 @@
+import FriendList from './FriendList';
+import Profile from './Profile';
+import Statistics from './Statistics';
+import TransactionHistory from './TransactionHistory';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <Profile />
+      <Statistics title="Upload Stats" />
+      <FriendList />
+      <TransactionHistory />
     </div>
   );
 };
