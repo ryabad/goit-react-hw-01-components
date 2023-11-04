@@ -1,11 +1,10 @@
 import FriendListItem from './FriendListItem';
-import data from './friends.json';
 import css from './index.module.css';
 
-const FriendList = () => {
+const FriendList = props => {
   return (
     <ul className={css.friend_list}>
-      <FriendListItem friends={data} />
+      <FriendListItem friends={props.friends} />
     </ul>
   );
 };

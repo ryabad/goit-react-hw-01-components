@@ -2,7 +2,7 @@ import data from './transactions.json';
 import css from './index.module.css';
 import Transaction from './Transaction';
 
-const TransactionHistory = () => {
+const TransactionHistory = props => {
   return (
     <table className={css.transaction_history}>
       <thead>
@@ -14,7 +14,7 @@ const TransactionHistory = () => {
       </thead>
 
       <tbody>
-        <Transaction items={data} />
+        <Transaction items={props.items} />
       </tbody>
     </table>
   );
