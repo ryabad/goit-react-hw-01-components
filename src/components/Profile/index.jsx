@@ -1,7 +1,15 @@
-import Stats from './Stats';
 import css from './index.module.css';
 
 const Profile = ({ avatar, username, tag, location, stats }) => {
+  const keys = Object.keys(stats);
+
+  const list = keys.map(el => (
+    <li key={el}>
+      <span className={css.label}>{el}</span>
+      <span className={css.quantity}>{stats[el]}</span>
+    </li>
+  ));
+
   return (
     <div className={css.profile}>
       <div className={css.description}>
@@ -10,7 +18,7 @@ const Profile = ({ avatar, username, tag, location, stats }) => {
         <p className={css.tag}>@{tag}</p>
         <p className={css.location}>{location}</p>
       </div>
-      <Stats stats={stats} />
+      <ul className={css.stats}>{list}</ul>
     </div>
   );
 };

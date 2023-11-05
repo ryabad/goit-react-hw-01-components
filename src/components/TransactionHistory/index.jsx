@@ -1,7 +1,14 @@
 import css from './index.module.css';
-import Transaction from './Transaction';
 
 const TransactionHistory = props => {
+  const items = props.items.map(el => (
+    <tr key={el.id}>
+      <td>{el.type}</td>
+      <td>{el.amount}</td>
+      <td>{el.currency}</td>
+    </tr>
+  ));
+
   return (
     <table className={css.transaction_history}>
       <thead>
@@ -12,9 +19,7 @@ const TransactionHistory = props => {
         </tr>
       </thead>
 
-      <tbody>
-        <Transaction items={props.items} />
-      </tbody>
+      <tbody>{items}</tbody>
     </table>
   );
 };
